@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/posts', postRouter);
 
-mongoose.connect(process.env.DB_URI, { useNewUrlParser: true })
+mongoose.connect(process.env.DB_URI, { useNewUrlParser: true }, {useUnifiedTopology:true})
     .then(() =>  console.log('mymerndb connection successful'))
     .catch((err) => console.error(err));
 
